@@ -13,23 +13,24 @@ const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 let visible = 0;
-
-next.addEventListener('click', function () {
+function slideDown() {
    if (visible < images.length - 1) {
       visible += 1;
       console.log(visible);
       document.querySelectorAll('.item')[visible - 1].classList.remove('active');
       document.querySelectorAll('.item')[visible].classList.add('active');
    }
-});
+}
 
-console.log(visible + 'hjk');
-
-prev.addEventListener('click', function () {
-   if (visible < 0) {
+function slideUp() {
+   if (visible > 0) {
       visible -= 1;
-      console.log(visible);
+      console.log('up', visible);
       document.querySelectorAll('.item')[visible + 1].classList.remove('active');
       document.querySelectorAll('.item')[visible].classList.add('active');
    }
-});
+}
+
+next.addEventListener('click', slideDown);
+prev.addEventListener('click', slideUp);
+console.log(visible);
