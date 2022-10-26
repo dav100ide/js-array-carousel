@@ -11,26 +11,36 @@ for (let i = 0; i < images.length; i++) {
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const itemList = document.querySelectorAll('.item');
 
 let visible = 0;
 function slideDown() {
    if (visible < images.length - 1) {
       visible += 1;
-      console.log(visible);
-      document.querySelectorAll('.item')[visible - 1].classList.remove('active');
-      document.querySelectorAll('.item')[visible].classList.add('active');
+      itemList[visible - 1].classList.remove('active');
+      itemList[visible].classList.add('active');
+      console.log(visible, 'down');
+   } else {
+      visible = 0;
+      itemList[images.length - 1].classList.remove('active');
+      itemList[visible].classList.add('active');
+      console.log(visible, 'down else');
    }
 }
 
 function slideUp() {
    if (visible > 0) {
       visible -= 1;
-      console.log('up', visible);
-      document.querySelectorAll('.item')[visible + 1].classList.remove('active');
-      document.querySelectorAll('.item')[visible].classList.add('active');
+      itemList[visible + 1].classList.remove('active');
+      itemList[visible].classList.add('active');
+      console.log(visible, 'up');
+   } else {
+      visible = images.length - 1;
+      itemList[0].classList.remove('active');
+      itemList[visible].classList.add('active');
+      console.log(visible, 'up else');
    }
 }
 
 next.addEventListener('click', slideDown);
 prev.addEventListener('click', slideUp);
-console.log(visible);
