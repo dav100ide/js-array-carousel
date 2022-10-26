@@ -27,10 +27,16 @@
    line-height: 1.5rem;
    border-radius: 50%;
    margin: 0.4rem 0;
+   cursor: pointer;
 }
 
 .next {
    bottom: 0;
+}
+
+.prev:hover,
+.next:hover {
+   background-color: rgb(255, 255, 255);
 }
 /* item */
 .item {
