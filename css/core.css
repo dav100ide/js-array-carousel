@@ -1,0 +1,49 @@
+/* ========================
+     commons
+=========================== */
+.ms_container {
+   width: 900px;
+   height: 100vh;
+}
+
+.items {
+   position: relative;
+   width: 700px;
+   height: 300px;
+}
+
+/* chevron up & down */
+.prev,
+.next {
+   position: absolute;
+   left: 50%;
+   translate: -50%;
+   font-size: 1.3rem;
+   z-index: 6969;
+   background-color: rgba(255, 255, 255, 0.7);
+   width: 1.5rem;
+   height: 1.5rem;
+   text-align: center;
+   line-height: 1.5rem;
+   border-radius: 50%;
+   margin: 0.4rem 0;
+}
+
+.next {
+   bottom: 0;
+}
+/* item */
+.item {
+   height: 100%;
+   display: none;
+}
+
+.item > img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.active {
+   display: block;
+}
