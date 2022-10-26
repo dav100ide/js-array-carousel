@@ -19,12 +19,10 @@ function slideDown() {
       visible += 1;
       itemList[visible - 1].classList.remove('active');
       itemList[visible].classList.add('active');
-      console.log(visible, 'down');
    } else {
       visible = 0;
       itemList[images.length - 1].classList.remove('active');
       itemList[visible].classList.add('active');
-      console.log(visible, 'down else');
    }
 }
 
@@ -33,12 +31,10 @@ function slideUp() {
       visible -= 1;
       itemList[visible + 1].classList.remove('active');
       itemList[visible].classList.add('active');
-      console.log(visible, 'up');
    } else {
       visible = images.length - 1;
       itemList[0].classList.remove('active');
       itemList[visible].classList.add('active');
-      console.log(visible, 'up else');
    }
 }
 
