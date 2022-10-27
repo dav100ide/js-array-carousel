@@ -5,7 +5,7 @@ const images = [
    'img/03.jpg',
    'img/04.jpg',
    'img/05.jpg',
-   'img/06.jpg',
+   'img/06.jpg', // LUNGHEZZA ARRAY
 ];
 
 const items = document.querySelector('.items');
@@ -27,29 +27,21 @@ const itemList = document.querySelectorAll('.item');
 
 let visible = 0;
 next.addEventListener('click', function () {
+   itemList[visible].classList.remove('active');
    if (visible < images.length - 1) {
       visible++;
-      itemList[visible - 1].classList.remove('active');
-      itemList[visible].classList.add('active');
-      console.log(visible, 'next');
    } else {
       visible = 0;
-      itemList[images.length - 1].classList.remove('active');
-      itemList[visible].classList.add('active');
-      console.log(visible, 'next else');
    }
+   itemList[visible].classList.add('active');
 });
 
 prev.addEventListener('click', function () {
+   itemList[visible].classList.remove('active');
    if (visible > 0) {
       visible--;
-      itemList[visible + 1].classList.remove('active');
-      itemList[visible].classList.add('active');
-      console.log(visible, 'prev');
    } else {
       visible = images.length - 1;
-      itemList[0].classList.remove('active');
-      itemList[visible].classList.add('active');
-      console.log(visible, 'prev else');
    }
+   itemList[visible].classList.add('active');
 });
